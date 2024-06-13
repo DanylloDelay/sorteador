@@ -1,0 +1,184 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('backgroundo.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffffd8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #0c2c4e;
+}
+
+textarea, input[type="number"], input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #0c2c4e;
+    margin-bottom: 10px;
+    font-family: Arial;
+    font-style: italic;
+    background-color: #cfd6da41;
+}
+
+#nameList {
+    height: 100px;
+}
+
+label.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-family: Arial;
+    font-style: italic;
+    color: #0c2c4e;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0c2c4e;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 300px;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #ff4800;
+    color: #ffffff;
+}
+
+#countdown {
+    font-size: 8em;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #ff4800;
+}
+
+#result {
+    margin: 20px;
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #ff4800;
+    border-radius: 10px;
+    padding: 5px;
+    transition: background-color 0.3s;
+}
+
+#result:hoverAA {
+    background-color: #ff4800;
+    width: 900px;
+    height: 350px;
+    font-size: 2em;
+    margin-left: -250px;
+    cursor: zoom-in;
+    transition: background-color 0.3s;
+}
+
+#result h2 {
+    font-size: 0.9em;
+    color: #ffffff;
+    font-weight: lighter;
+}
+
+#previousResults {
+    margin-top: 20px;
+    color: #333;
+    text-align: left;
+}
+
+#previousResults ul {
+    padding-left: 20px;
+}
+
+#previousResults li {
+    margin-bottom: 5px;
+}
+
+.link-button {
+    background: none;
+    border: none;
+    color: #0c2c4e;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+}
+
+.clear-button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    width: 90px;
+}
+
+.history-header {
+    display: flex;
+    align-items: center;
+}
+
+/* Animation Styles */
+/* Animation Styles */
+.animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.circle {
+    width: 500px;
+    height: 500px;
+    border: 10px solid #ffffff83;
+    border-radius: 50%;
+    border-top: 20px solid #ff4800;
+    border-bottom: 20px solid #4478e7;
+    animation: spin 1s linear infinite;
+    position: relative;
+}
+
+.countdown-timer {
+    font-size: 20em;
+    color: #ffffff;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
