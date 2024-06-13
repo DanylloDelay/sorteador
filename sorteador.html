@@ -1,0 +1,47 @@
+  <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteador de Nomes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="SorteioEstarLogoAzul.png" style="width: 350px;">
+        <input type="text" id="raffleName" placeholder="Qual será o nome do sorteio?">
+        <textarea id="nameList" placeholder="Digite aqui os nomes/números separados por vírgula."></textarea>
+        <input type="number" id="quantity" placeholder="Quantidade a sortear">
+        <label class="checkbox-container">
+            <input type="checkbox" id="allowRepeats">
+            Permitir repetição
+        </label>
+        <br>
+        <button style="font-weight: bold;" onclick="startAnimation()">Iniciar Sorteio!</button>
+        <div id="countdown" style="display: none;"></div>
+        <div id="result"></div>
+        <button class="link-button" onclick="togglePreviousResults()">Mostrar/Ocultar histórico de sorteios</button>
+        <div id="previousResults">
+            <div class="history-header">
+                <h2>Histórico de Sorteios | </h2>
+                <button class="clear-button" onclick="clearPreviousResults()">🗑️</button>
+            </div>
+            <ul id="winnersList"></ul>
+        </div>
+    </div>
+
+    <div id="animation" class="animation" style="display: none;">
+        <div class="circle"></div>
+        <div class="countdown-timer" id="animationCountdown">5</div>
+    </div>
+
+    <div id="backgroundCC" style="background-color: black; height: 100vh; width: 100vw; position: absolute; display: none;"></div>
+
+
+    <!-- Elemento de áudio para a música -->
+    <audio id="backgroundMusic" src="contagemmusica.m4a" preload="auto"></audio>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
