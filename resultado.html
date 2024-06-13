@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado do Sorteio</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            opacity: 0; /* Começa com opacidade zero para animação de transição */
+            animation: fadeIn 0.5s ease-in-out forwards; /* Animação de fade-in */
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #winnerNames {
+            font-size: 5em;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #ff4800;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            width: 200px;
+            height: 30px;
+            font-size: 1.2em;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #d87d59;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="goBack()">Novo Sorteio</button>
+    <h1 id="raffleTitle">Resultado do Sorteio</h1>
+    <div id="winnerNames"></div>
+
+    <!-- Elemento de áudio para a música -->
+    <audio id="backgroundMusic" src="musicasorteados.m4a" preload="auto"></audio>
+
+    <script>
+        // Recupera os dados do sorteio do localStorage
+        const raffleName = localStorage.getItem('raffleName');
+        const winners = JSON.parse(localStorage.getItem('winners'));
+
+        // Atualiza o título e os nomes sorteados na página
+        document.getElementById('raffleTitle').innerText = raffleName ? `Resultado do Sorteio: ${raffleName}` : 'Resultado do Sorteio';
+        document.getElementById('winnerNames').innerText = winners ? winners.join(', ') : 'Nenhum nome sorteado';
+
+        // Inicia a música quando a página é carregada
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        backgroundMusic.play();
+
+        // Limpa os dados do localStorage após exibição
+        localStorage.removeItem('raffleName');
+        localStorage.removeItem('winners');
+
+        // Adiciona um pequeno atraso para redirecionamento suave
+     
+        function goBack() {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                window.location.href = 'sorteador.html';
+            }, 0);
+        }
+    </script>
+</body>
+</html>
